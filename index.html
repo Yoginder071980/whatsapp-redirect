@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open WhatsApp</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 60px 20px; background: #f4f6f8;">
+  <p style="font-size: 16px; color: #444; margin-bottom: 30px;">Your message is ready. Tap below to open WhatsApp.</p>
+  <a id="waLink" href="#"
+     style="display: inline-block; background: #25D366; color: #ffffff;
+            padding: 16px 48px; text-decoration: none; border-radius: 50px;
+            font-size: 18px; font-weight: 600;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);">
+    Open WhatsApp →
+  </a>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const wa = params.get('wa');
+    if (wa) {
+      document.getElementById('waLink').href = decodeURIComponent(wa);
+    }
+  </script>
+</body>
+</html>
